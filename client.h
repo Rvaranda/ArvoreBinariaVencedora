@@ -12,5 +12,6 @@ typedef struct Client
 Client* client_loadFromFile(FILE* file);
 void client_saveInFile(FILE* file, Client* client);
 void client_saveInFileN(FILE* file, unsigned int cod, const char* name, const char* birth);
+void client_print(Client* client);
 
 #endif // CLIENT_H_INCLUDED

@@ -42,15 +42,8 @@ int main()
 
     if (client != NULL && rafael != NULL)
     {
-        printf("Codigo: %u\n", client->cod);
-        printf("Nome: %s\n", client->name);
-        printf("Data de Nascimento: %s\n", client->birth);
-
-        printf("--------------------------\n");
-
-        printf("Codigo: %u\n", rafael->cod);
-        printf("Nome: %s\n", rafael->name);
-        printf("Data de Nascimento: %s\n", rafael->birth);
+        client_print(client);
+        client_print(rafael);
     }
 
     free(rafael);

@@ -50,3 +50,11 @@ void client_saveInFileN(FILE* file, unsigned int cod, const char* name, const ch
     free(tmpClient);
     tmpClient = NULL;
 }
+
+void client_print(Client* client)
+{
+    printf("Codigo: %u\n", client->cod);
+    printf("Nome: %s\n", client->name);
+    printf("Data de Nascimento: %s\n", client->birth);
+    printf("--------------------------\n");
+}
