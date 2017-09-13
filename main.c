@@ -4,50 +4,51 @@
 #include "client.h"
 
 
-/*typedef struct Node
+typedef struct Node
 {
     Client* data;
     struct Node* left;
     struct Node* right;
-}Node;
+} Node;
 
 typedef struct BinTree
 {
     Node* root;
     int totalNodes;
-}BinTree;*/
+} BinTree;
 
+BinTree* createWinnerBinTree(int numPart);
 
 int main()
 {
-    /*Client* rafael = (Client*)malloc(sizeof(Client));
+    FILE* partsToRead = fopen("filesToRead.txt", "r");
+    if (partsToRead == NULL) return 1;
 
-    rafael->cod = 7586;
-    strcpy(rafael->name, "Rafael");
-    strcpy(rafael->birth, "18/06/1996");*/
+    int num = 0;
+    char line[20];
 
-    FILE* fileWrite = fopen("arquivos/clients.bat", "wb");
-
-    client_saveInFileN(fileWrite, 1389654, "Jubileu Araujo Delgado", "23/08/1979");
-    client_saveInFileN(fileWrite, 7586, "Rafael Andrade Varanda", "18/06/1996");
-
-    fclose(fileWrite);
-
-    FILE* fileRead = fopen("arquivos/clients.bat", "rb");
-
-    Client* client = client_loadFromFile(fileRead);
-    Client* rafael = client_loadFromFile(fileRead);
-
-    fclose(fileRead);
-
-    if (client != NULL && rafael != NULL)
+    while ((fscanf(partsToRead, "%s", line)) != EOF)
     {
-        client_print(client);
-        client_print(rafael);
+        printf("%s\n", line);
+
+        FILE* test = fopen(line, "wb");
+        if (test != NULL) fclose(test);
+
+        num++;
     }
 
-    free(rafael);
-    free(client);
+    printf("%d\n", num);
+
+    fclose(partsToRead);
 
     return 0;
+}
+
+BinTree* createWinnerBinTree(int numPart)
+{
+    BinTree* t = (BinTree*)malloc(sizeof(BinTree));
+    if (t != NULL)
+    {
+
+    }
 }
